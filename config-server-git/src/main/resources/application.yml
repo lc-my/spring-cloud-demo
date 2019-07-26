@@ -8,3 +8,6 @@ spring:
           uri: https://github.com/lc-my/spring-cloud-demo.git
 server:
   port: 1201
+eureka:
+  client:
+    service-url: { "defaultZone" : "http://127.0.0.1:8089/eureka/"}

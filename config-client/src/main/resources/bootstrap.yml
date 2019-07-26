@@ -3,9 +3,19 @@ spring:
     name: config-client
   cloud:
     config:
-      uri: http://127.0.0.1:1201/
+      ##uri: http://127.0.0.1:1201/
       profile: dev
       label: master
+      discovery:
+        enabled: true
+        service-id: config-server
+
 
 server:
   port: 2001
+eureka:
+  client:
+    service-url: { "defaultZone" :"http://127.0.0.1:8089/eureka/"}
+management:
+  security:
+    enabled: false

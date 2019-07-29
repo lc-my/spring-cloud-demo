@@ -1,8 +1,23 @@
-eureka:
-  client:
-    service-url: {"defaultZone":"http://127.0.0.1:8089/eureka"}
+#eureka:
+  #client:
+    #service-url: {"defaultZone":"http://127.0.0.1:8089/eureka"}
 spring:
   application:
     name: api-gateway
 server:
   port: 1101
+zuul:
+  routes:
+    eureka-client:
+      path: /eureka-client/*
+      #url: http://127.0.1:8080
+      serviceId: eureka-client
+#ribbon:
+  #eureka:
+    #enabled: false
+eureka-client:
+  ribbon:
+    listOfServers: http://127.0.1:8080
+eureka:
+  client:
+    enabled: false

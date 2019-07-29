@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: turbine
+server:
+  port: 8989
+eureka:
+  client:
+    service-url: {"defaultZone":"http://127.0.0.1:8089/eureka"}
+    eureka-server-port: 8089
+turbine:
+  app-config: eureka-consumer-ribbon-hystrix
+  ##cluster-name-expression: "default"
+  combine-host-port: true
